@@ -4,14 +4,16 @@
  * Implements quicksort algo to sort an array of ints in place
  *
  * 1. Summary of QuickSort algorithm:
- * QSort(arr): 
+ * QSort(arr): Run partition() on array, value returned is the new upper/lower bound for the next two function calls.
+ * Run partition again, on two arrays. One from left to m-1, and one from m+1 to right.
+ * Base case is if left==right bc that means array has length 1 
  *
- * 2a. Worst pivot choice / array state and associated runtime: 
+ * 2a. Worst pivot choice / array state and associated runtime: If the given array is completely random, because there will n swaps per split, which renders the runtime n squared.
  *
- * 2b. Best pivot choice / array state and associated runtime:
+ * 2b. Best pivot choice / array state and associated runtime: If the given array is already sorted, because there will be no need for swaps, which are the most time consuming. This ideal situation should have a run-time of n
  *
  * 3. Approach to handling duplicate values in array:
- *
+ * Duplicates shouldn't impact anything, since equal and smaller numbers are treated the same way.
  *****************************************************/
 
 /***
