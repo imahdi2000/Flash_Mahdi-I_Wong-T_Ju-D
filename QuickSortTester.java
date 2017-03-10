@@ -2,16 +2,9 @@ public class QuickSortTester
 {
 
     /******************************
-     Creates 10 arrays of 1,10,50,100,and 1000 items and finds the avg time in miliseconds it takes to complete a merge sort, printing out a trace diagram for each test case.
+     Creates 10 arrays of 100,1000,10000,100000,and 1000000 items and finds the avg time in miliseconds it takes to complete a quick sort, printing out a trace diagram for each test case. 
+     To find the time measurements, System.currentTimeMillis() returns the value for how long an operation took, and the averages are calculated for a more accurate measurement. 
      ******************************/
-
-    public static long time(int[] arr){
-	QuickSort runner = new QuickSort();
-	long time = System.nanoTime();
-	runner.qsort(arr);
-	time = System.nanoTime() - time;
-	return time;
-    }
     
     public static void main( String[] args ) 
     {
@@ -19,8 +12,6 @@ public class QuickSortTester
 	int[] test1000 = new int [1000];
 	int[] test10000 = new int [10000];
 	int[] test100000 = new int [100000];
-	//int[] test500000 = new int[5000000];
-	//int[] test3000 = new int[3000];
 	int[] stest100= new int [100];
 	int[] stest1000 = new int [1000];
 	int[] stest10000 = new int [10000];
@@ -37,10 +28,7 @@ public class QuickSortTester
 	double stime1000 = 0;
 	double stime10000 = 0;
 	double stime100000 = 0;
-	double stime1000000 = 0;
-	//double time500000 = 0;
-	//double time4000 = 0;
-      
+	double stime1000000 = 0;      
 
 	System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~");
 
