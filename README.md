@@ -59,3 +59,6 @@ Best and average and worst case scenarios:
 
 
 
+Since the x values are so large (All the way to the hundred thousands), all graphs had the appearance of a flat line, which rendered them unhelpful for determining big O. Thus, we do not have any graphs. 
+
+
