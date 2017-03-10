@@ -25,6 +25,7 @@ public class QuickSortTester
 	int[] stest1000 = new int [1000];
 	int[] stest10000 = new int [10000];
 	int[] stest100000 = new int [100000];
+	int[] stest1000000 = new int [1000000];
 	
 	double a = 0;
 	double b = 0;
@@ -36,6 +37,7 @@ public class QuickSortTester
 	double stime1000 = 0;
 	double stime10000 = 0;
 	double stime100000 = 0;
+	double stime1000000 = 0;
 	//double time500000 = 0;
 	//double time4000 = 0;
       
@@ -239,7 +241,30 @@ public class QuickSortTester
 	}
 
 	System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~");
+	System.out.println("~~~~~~~~~~SORTED ARRAY n=1000000~~~~~~~~~~~~~~");
+	counter = 0;
+	while (counter<9){
+	    //populate a 1000000 sorted item array
+	    int p = 0;
+	    while(p<1000000){
+		stest1000000[p] = p;
+		p++;
+	    }
+	    System.out.println("Testing on sorted array ");
+	    //QuickSort.printArr(test1000000);
+	    System.out.print(" ....\n");
 
+	    //start stopwatch
+	    a = System.currentTimeMillis();
+	    QuickSort.qsort(stest1000000);
+	    b= System.currentTimeMillis();
+
+	    System.out.println("Time: " + (b - a));
+	    stime1000000 += b-a;
+	    counter ++;
+	}
+
+	System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~");
 	System.out.println("AVG TIME FOR n=100:" + (time100 *1.0 / 10));
 	System.out.println("AVG TIME FOR n=1000:" + (time1000 *1.0 / 10));		
 	System.out.println("AVG TIME FOR n=10000:" + (time10000 *1.0 / 10));
@@ -248,6 +273,7 @@ public class QuickSortTester
 	System.out.println("AVG TIME FOR SORTED n=1000:" + (stime1000 *1.0 / 10));		
 	System.out.println("AVG TIME FOR SORTED n=10000:" + (stime10000 *1.0 / 10));
 	System.out.println("AVG TIME FOR SORTED n=100000:" + (stime100000 *1.0 / 10));
+	System.out.println("AVG TIME FOR SORTED n=1000000:" + (stime1000000 *1.0 / 10));
     }//end main
 
 }//end class
